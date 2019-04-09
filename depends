@@ -14,3 +14,4 @@
 
 # Following are sample dependencies, modify as appropriate.
 https://github.com/xrfang/go-res
+https://github.com/BurntSushi/graphics-go

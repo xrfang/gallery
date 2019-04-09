@@ -2,13 +2,13 @@
 <nav class="navbar navbar-expand navbar-dark bg-dark" style="padding:1 0 1 8">
   <a class="navbar-brand" href="#" style="font-variant:small-caps">Gallery</a>
 </nav>
-<div id=imgs class="container-fluid" style="padding-top:0.6rem"></div>
+<div id=imgs class="container-fluid" style="padding-top:0.6rem;text-align:center"></div>
 <script>
   $(function () {
     $.get("/imgs", function (ret) {
       var imgs = $('#imgs')
       $.each(ret, function (_, fn) {
-        imgs.append(`<img width="100px" style="margin:0.4rem" class="img-fluid img-thumbnail" src="/img/${fn}" />`)
+        imgs.append(`<img style="width:80px;height:80px;margin:0.4rem" class="img-fluid img-thumbnail" src="/img/${fn}?thumbnail" />`)
       })
     })
   })
