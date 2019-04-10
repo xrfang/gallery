@@ -11,7 +11,7 @@ import (
 	res "github.com/xrfang/go-res"
 )
 
-var imgRoot, webRoot string
+var imgRoot, webRoot, galleryTitle, uri string
 
 func assert(err error) {
 	if err != nil {
@@ -20,12 +20,12 @@ func assert(err error) {
 }
 
 func main() {
-	var uri string
 	ver := flag.Bool("version", false, "show version info")
 	port := flag.String("port", "8080", "service port")
 	flag.StringVar(&uri, "uri", "/", "relative path to the gallery")
 	flag.StringVar(&webRoot, "webroot", "/tmp/gallery/webroot", "")
 	flag.StringVar(&imgRoot, "imgs", "", "directory for images")
+	flag.StringVar(&galleryTitle, "title", "Gallery", "title of the gallery")
 	pkg := flag.String("pack", "", "pack resources under directory")
 	flag.Parse()
 	if *ver {
@@ -42,6 +42,7 @@ func main() {
 		fmt.Println("invalid or missing image directory (-imgs)")
 		os.Exit(1)
 	}
+	GenerateResources()
 	assert(res.Extract(webRoot, res.OverwriteIfNewer))
 	if !strings.HasPrefix(uri, "/") {
 		uri = "/" + uri

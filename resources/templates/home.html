@@ -1,6 +1,7 @@
 {{define "body"}} {{template "header"}}
 <nav class="navbar navbar-expand navbar-dark bg-dark" style="padding:1 0 1 8">
-  <a class="navbar-brand" href="#" style="font-variant:small-caps">Gallery</a>
+  <a class="navbar-brand" href="#" style="font-variant:small-caps">{{.Title}}</a>
+  <div class="ml-auto"><a role="button" style="margin-right:0.5rem" class="btn btn-success btn-sm" href="{{.Zip}}">打包下载 ({{.Total}}M)</a></div>
 </nav>
 <div id=imgs class="container-fluid" style="padding-top:0.6rem;text-align:center"></div>
 <script>
