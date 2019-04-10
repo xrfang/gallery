@@ -13,7 +13,8 @@
       var imgs = $('#imgs')
       $.each(ret, function (i, fn) {
         viewer.add(`/img/${fn}`)
-        imgs.append(`<img style="width:80px;height:80px;margin:0.4rem" class="img-fluid img-thumbnail" onclick="return viewer.show(${i})" src="/img/${fn}?thumbnail" />`)
+        imgs.append(`<img style="width:80px;height:80px;margin:0.4rem;cursor:pointer" class="img-fluid img-thumbnail"
+            onclick="return viewer.show(${i})" src="/img/${fn}?thumbnail" />`)
       })
     })
   })
