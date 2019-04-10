@@ -6,7 +6,8 @@
 </nav>
 <div id=imgs class="container-fluid" style="padding-top:0.6rem;text-align:center"></div>
 <script>
-  var viewer = new PhotoViewer();
+  var viewer = new PhotoViewer()
+  viewer.disableEmailLink()
   $(function () {
     $.get("/imgs", function (ret) {
       var imgs = $('#imgs')
